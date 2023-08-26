@@ -49,10 +49,10 @@ class _AddQuestionsState extends State<AddQuestions> {
     super.initState();
   }
 
+  String? selectedRadioValue;
+
   @override
   Widget build(BuildContext context) {
-    String? selectedRadioValue;
-
     return SingleChildScrollView(
         child: SizedBox(
       width: double.infinity,
@@ -84,6 +84,7 @@ class _AddQuestionsState extends State<AddQuestions> {
                 itemCount: 4,
                 itemBuilder: ((context, index) {
                   return RadioListTile<String>(
+                    // key: Key('$index'),
                     value: answerControllers[index].text,
                     groupValue: selectedRadioValue,
                     onChanged: (value) {
